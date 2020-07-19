@@ -14,3 +14,4 @@ pyjwt
 python-dotenv
 email-validator
 elasticsearch
+gunicorn

@@ -1,1 +1,1 @@
-web: flask db downgrade; flask db upgrade; gunicorn webServer:app
+web: flask db upgrade; gunicorn webServer:app

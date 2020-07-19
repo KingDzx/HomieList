@@ -14,3 +14,4 @@ class Config(object):
     ADMINS = ['d.zachary@hotmail.com', 'zachary.orr@gmail.com']
     SHOWS_PER_PAGE = 25
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')

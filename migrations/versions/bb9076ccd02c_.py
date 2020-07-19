@@ -21,7 +21,7 @@ def upgrade():
     op.create_table('show',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=500), nullable=True),
-    sa.Column('description', sa.String(length=2500), nullable=True),
+    sa.Column('description', sa.String(length=5000), nullable=True),
     sa.Column('rating', sa.Float(precision=2), nullable=True),
     sa.Column('genre', sa.ARRAY(sa.String()), nullable=True),
     sa.Column('type', sa.Enum('anime', 'show', 'movie', name='showtypes'), nullable=True),

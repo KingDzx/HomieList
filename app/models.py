@@ -97,7 +97,7 @@ class User(UserMixin, db.Model):
 class Show(SearchableMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(500), index=True, unique=True)
-    description = db.Column(db.String(2500))
+    description = db.Column(db.String(5000))
     rating = db.Column(db.Float(precision=2), default=0)
     genre = db.Column(db.ARRAY(db.String))
     type = db.Column(db.Enum(ShowTypes))

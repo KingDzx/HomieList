@@ -192,7 +192,7 @@ def reset_password(token):
 @app.route("/loadData")
 def loadData():
     dir = os.path.dirname(__file__)
-    list = pd.read_csv(dir + "\\data\\animes.csv", header=0, usecols=["title", "synopsis", "genre", "img_url"])
+    list = pd.read_csv(dir + "/data/animes.csv", header=0, usecols=["title", "synopsis", "genre", "img_url"])
     list_clean = list.drop_duplicates(subset=["title"])
 
     for anime in list_clean.itertuples(index=False, name=None):

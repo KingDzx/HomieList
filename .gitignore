@@ -2,5 +2,4 @@
 .idea
 venv
 ngrok.exe
-migrations
 logs

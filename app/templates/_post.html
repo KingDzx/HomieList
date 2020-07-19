@@ -15,7 +15,7 @@
         {{ review.rating }}
     </td>
     <td>
-        {{ moment(review.timestamp).fromNow() }}
+        {{ moment(review.timestamp).format('L') }}
     </td>
     {% if review.author.username|string() == current_user.username|string() %}
     <td>

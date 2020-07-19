@@ -50,7 +50,7 @@ class SearchableMixin(object):
 
     @classmethod
     def reindex(cls):
-        for obj in cls.query:
+        for obj in cls.query.all():
             add_to_index(cls.__tablename__, obj)
 
 

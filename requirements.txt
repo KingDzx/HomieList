@@ -1,0 +1,16 @@
+flask
+flask_csv
+flask-wtf
+flask-sqlalchemy
+flask-migrate
+flask_login
+flask_script
+flask_mail
+flask_bootstrap
+flask_moment
+pandas
+psycopg2
+pyjwt
+python-dotenv
+email-validator
+elasticsearch

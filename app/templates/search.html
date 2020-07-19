@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>Search Results</h1>
+    <table class="table table-hover">
+    <tr>
+        <td>Poster</td>
+        <td>Name</td>
+    </tr>
+    {% for show in shows %}
+        <tr>
+            <td>
+                <img src={{ show.image }} alt={{ show.title }}>
+            </td>
+            <td>
+                <a href={{ url_for('show', id=show.id) }}>{{ show.title }}</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span>
+                    Previous results
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Next results
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

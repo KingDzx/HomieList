@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>{{ show.title }}</h1>
+    <img src={{ show.image }}>
+    <h2>Description:</h2>
+    <p> {{ show.description }}</p>
+    <h2>Genre: </h2>
+    {% for genre in show.genre %}
+        <p>{{ genre }}</p>
+    {% endfor %}
+    <h3>Rating: {{ show.rating }}/10</h3>
+
+    <table class="table table-hover">
+        <tr>
+            <td>
+                User
+            </td>
+            <td>
+                Review
+            </td>
+            <td>
+                Rating
+            </td>
+            <td>
+                Posted at
+            </td>
+        </tr>
+        {% for review in reviews %}
+            {% include '_post.html' %}
+        {% endfor %}
+    </table>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.post.label }}<br>
+            {{ form.post(cols=32, rows=4) }}<br>
+            {% for error in form.post.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.rating.label }}<br>
+            {{ form.rating(cols=1, rows=2) }}<br>
+            {% for error in form.rating.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

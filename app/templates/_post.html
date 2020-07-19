@@ -1,0 +1,25 @@
+<tr>
+    <td width="70px">
+        <img src="{{ review.author.avatar(36) }}">
+        <a href={{ url_for('user', username=review.author.username) }}>{{ review.author.username }}</a>
+    </td>
+    {% if "/show" not in request.path %}
+    <td>
+        <a href={{ url_for('show', id=review.show.id) }}>{{ review.show.title }}</a>
+    </td>
+    {% endif %}
+    <td>
+        {{ review.body }}
+    </td>
+    <td>
+        {{ review.rating }}
+    </td>
+    <td>
+        {{ moment(review.timestamp).fromNow() }}
+    </td>
+    {% if review.author.username|string() == current_user.username|string() %}
+    <td>
+        <a href={{ url_for("edit_review", showID=review.show.id) }}>Edit Review</a>
+    </td>
+    {% endif %}
+</tr>

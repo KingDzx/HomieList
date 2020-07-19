@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    {% if current_user %}
+    <h1>Welcome to Homie List {{ current_user.username }}!</h1>
+    {% else %}
+    <h1>Welcome to Homie List!</h1>
+    {% endif %}
+
+    <table class="table table-hover">
+        <tr>
+            <td>
+                User
+            </td>
+            {% if request.path == "/"%}
+            <td>
+                Show
+            </td>
+            {% endif %}
+            <td>
+                Review
+            </td>
+            <td>
+                Rating
+            </td>
+            <td>
+                Posted at
+            </td>
+        </tr>
+        {% for review in reviews %}
+            {% include '_post.html' %}
+        {% endfor %}
+{% endblock %}

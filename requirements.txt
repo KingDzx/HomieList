@@ -15,3 +15,4 @@ python-dotenv
 email-validator
 elasticsearch
 gunicorn
+werkzeug==2.2.2
